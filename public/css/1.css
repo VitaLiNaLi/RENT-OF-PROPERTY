@@ -1,0 +1,31 @@
+legend {
+  background-color: #000;
+  color: #fff;
+  padding: 3px 6px;
+}
+
+.chooseCat {
+  margin: 0.4rem;
+}
+
+.divFilter {
+  width: 15%;
+  display: flex;
+  justify-content: center;
+}
+
+.placeList {
+  width: 85%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.mainContainer {
+  display: flex;
+  justify-content: space-around;
+}
+
+.card {
+  margin-bottom: 20px;
+}
