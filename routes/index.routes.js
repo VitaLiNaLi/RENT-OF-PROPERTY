@@ -4,6 +4,7 @@ const router = require('express').Router();
 // const authViewRouter = require('./views/auth.routes');
 // const profileViewRouter = require('./views/profile.routes');
 const categoryViewRouter = require('./views/category.routes');
+const filterViewRouter = require('./views/filter.routes');
 // const usersViewRouter = require('./views/users.routes');
 // const productsViewRouter = require('./views/products.routes');
 // const orderViewRouter = require('./views/order.routes');
@@ -20,8 +21,9 @@ const categoryViewRouter = require('./views/category.routes');
 // router.use('/orders', orderViewRouter);
 // router.use('/profile', profileViewRouter);
 router.use('/', categoryViewRouter);
+router.use('/filter', filterViewRouter);
 // router.use('/users', usersViewRouter);
 // router.use('/auth/api', authApiRouter);
-//router.use('/api/users', rejectIfNotAuthorized, usersApiRouter);
+// router.use('/api/users', rejectIfNotAuthorized, usersApiRouter);
 
 module.exports = router;
