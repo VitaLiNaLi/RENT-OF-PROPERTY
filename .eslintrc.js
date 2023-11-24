@@ -5,23 +5,22 @@ module.exports = {
     es2021: true,
     node: true,
   },
-  extends: 'airbnb',
+  extends: "airbnb",
   overrides: [
     {
       env: {
         node: true,
       },
-      files: [
-        '.eslintrc.{js,cjs}',
-      ],
+      files: [".eslintrc.{js,cjs}"],
       parserOptions: {
-        sourceType: 'script',
+        sourceType: "script",
       },
     },
   ],
   parserOptions: {
-    ecmaVersion: 'latest',
+    ecmaVersion: "latest",
   },
   rules: {
+"doublequotes" :"false"
   },
 };
