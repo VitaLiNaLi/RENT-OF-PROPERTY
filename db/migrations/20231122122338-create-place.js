@@ -31,11 +31,11 @@ module.exports = {
         type: Sequelize.TEXT,
       },
       coordinates: {
-        allowNull: false,
+        allowNull: true,
         type: Sequelize.TEXT,
       },
       userPlaceId: {
-        allowNull: false,
+        allowNull: true,
         type: Sequelize.INTEGER,
         references: {
           model: "Users",

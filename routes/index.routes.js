@@ -9,7 +9,7 @@ const router = require('express').Router();
 // const orderViewRouter = require('./views/order.routes');
 
 // // API
-// const authApiRouter = require('./api/auth.api.routes');
+const adminApiRouter = require('./api/api.admin.routes');
 // //const usersApiRouter = require('./api/users.api.routes');
 
 // // Endpoint Protection
@@ -21,7 +21,7 @@ const router = require('express').Router();
 // router.use('/profile', profileViewRouter);
 // router.use('/', categoryViewRouter);
 // router.use('/users', usersViewRouter);
-// router.use('/auth/api', authApiRouter);
-//router.use('/api/users', rejectIfNotAuthorized, usersApiRouter);
+router.use('/', adminApiRouter);
+// router.use('', rejectIfNotAuthorized, usersApiRouter);
 
 module.exports = router;
