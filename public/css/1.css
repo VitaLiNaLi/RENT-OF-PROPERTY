@@ -44,7 +44,7 @@ legend {
 }
 
 .card {
-  margin-bottom: 20px;
+  margin: 0 10px 50px 10px
 }
 
 #enter {
@@ -70,4 +70,11 @@ legend {
 .btn-primary:hover {
   background-color: rgba(255, 0, 0, 0.621) !important;
   color: white !important;
+}
+
+.favoriteList {
+  display: flex;
+  flex-wrap: wrap;
+  min-width: 1200px;
+  margin: 50px auto;
 }

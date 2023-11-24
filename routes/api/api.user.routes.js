@@ -13,14 +13,14 @@ const { generateTokens } = require("../../utils/authUtils");
 router.post("/registration", async (req, res) => {
   try {
     const { name, sName, email, password, tel } = req.body;
-    const user = await User.findOne({ where: { email } });
+    let user = await User.findOne({ where: { email } });
     if (user) {
       res
         .status(400)
         .json({ success: false, error: "Такой пользователь уже существует" });
     } else {
       const hashPassword = await bcrypt.hash(password, 10);
-      await User.create({
+     user =  await User.create({
         name,
         sName,
         email,
@@ -28,12 +28,27 @@ router.post("/registration", async (req, res) => {
         tel,
         isAdmin: false,
       });
+      const { accessToken, refreshToken } = generateTokens({
+        user: { id: user.id, name: user.name, email: user.email },
+      });
+
+
+      // устанавливаем куки
+      res.cookie("access", accessToken, {
+        maxAge: 1000 * 60 * 5,
+        httpOnly: true,
+      });
+      res.cookie("refresh", refreshToken, {
+        maxAge: 1000 * 60 * 60 * 12,
+        httpOnly: true,
+      });
       res.json({
         success: true,
         message: `Добавлен новый пользователь`,
       });
     }
   } catch (error) {
+    console.log(err.message);
     return res.status(500).json({ success: false, message: error.message });
   }
 });
