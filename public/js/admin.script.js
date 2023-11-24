@@ -30,7 +30,6 @@ if (modal) {
       const card = event.target.closest(".accordion");
       console.log(delBtn, "--------");
 
-router.use('/admin', adminApiRouter);
       const res = await fetch(`/admin/${delBtn.dataset.id}/delete`, {
         method: "DELETE",
       });
