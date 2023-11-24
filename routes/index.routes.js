@@ -9,7 +9,7 @@ const categoryViewRouter = require('./views/category.routes');
 // const orderViewRouter = require('./views/order.routes');
 
 // // API
-// const authApiRouter = require('./api/auth.api.routes');
+const adminApiRouter = require('./api/api.admin.routes');
 // //const usersApiRouter = require('./api/users.api.routes');
 
 // // Endpoint Protection
@@ -21,7 +21,6 @@ const categoryViewRouter = require('./views/category.routes');
 // router.use('/profile', profileViewRouter);
 router.use('/', categoryViewRouter);
 // router.use('/users', usersViewRouter);
-// router.use('/auth/api', authApiRouter);
-// router.use('/api/users', rejectIfNotAuthorized, usersApiRouter);
+router.use('/', adminApiRouter);
 
 module.exports = router;

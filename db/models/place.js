@@ -39,11 +39,11 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.TEXT,
       },
       coordinates: {
-        allowNull: false,
+        allowNull: true,
         type: DataTypes.TEXT,
       },
       userPlaceId: {
-        allowNull: false,
+        allowNull: true,
         type: DataTypes.INTEGER,
         references: {
           model: "Users",
