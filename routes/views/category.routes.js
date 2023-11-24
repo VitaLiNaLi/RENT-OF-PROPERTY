@@ -12,15 +12,15 @@ router.get('/', async (req, res) => {
       .map((el) => +el);
     if (cats.length !== 0) {
       allPlaces = await Place.findAll({
-        where: { categoryId: cats, price: { [Op.lte]: Number(priceText) } },
+        where: { categoryId: cats, price: { [Op.lte]: Number(priceText) },}, include: Photo,
       });
     } else {
       allPlaces = await Place.findAll({
-        where: { price: { [Op.lte]: Number(priceText) } },
+        where: { price: { [Op.lte]: Number(priceText) } }, include: Photo,
       });
     }
   } else {
-    allPlaces = await Place.findAll();
+    allPlaces = await Place.findAll({ include: Photo });
   }
   const allCategories = await Category.findAll();
   const html = res.renderComponent(MainPage, {

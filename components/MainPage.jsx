@@ -37,6 +37,7 @@ function MainPage({ title, allCategories, allPlaces }) {
                   max="150000"
                   name="priceRange"
                   list="markers"
+                  defaultValue='150000'
                 />
               </label>
               <datalist id="markers">
@@ -49,7 +50,7 @@ function MainPage({ title, allCategories, allPlaces }) {
               <label>
                 Или введите её:
                 <br />
-                <input type="text" id="textInput" name="priceText" />
+                <input type="text" id="textInput" name="priceText" defaultValue='150000'/>
               </label>
             </fieldset>
             <button id='enter' type="submit">Применить фильтры</button>
