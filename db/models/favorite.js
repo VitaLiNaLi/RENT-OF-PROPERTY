@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate({User, Place}) {
       this.belongsTo( User, {foreignKey: 'userFavoriteId'})
-      this.belongsTo( Place, {foreignKey: 'userFavoriteId'})
+      this.belongsTo( Place, {foreignKey: 'placeId'})
       // define association here
     }
   }

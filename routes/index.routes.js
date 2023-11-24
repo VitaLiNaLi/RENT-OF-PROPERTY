@@ -4,6 +4,7 @@ const router = require('express').Router();
 const authViewRouter = require('./view/auth.routes');
 // const profileViewRouter = require('./views/profile.routes');
 const categoryViewRouter = require('./views/category.routes');
+const userViewRouter = require('./views/user.routes')
 // const usersViewRouter = require('./views/users.routes');
 // const productsViewRouter = require('./views/products.routes');
 // const orderViewRouter = require('./views/order.routes');
@@ -17,12 +18,12 @@ const adminApiRouter = require('./api/api.admin.routes');
 // // Endpoint Protection
 // const { rejectIfNotAuthorized } = require('../middleware/auth');
 
-router.use('/', authViewRouter);
+router.use('/auth', authViewRouter);
 router.use('/', categoryViewRouter);
+router.use('/user', userViewRouter);
 
 router.use('/api/auth', authApiRouter);
-
-router.use('/', adminApiRouter);
+router.use('/admin', adminApiRouter);
 
 
 module.exports = router;
