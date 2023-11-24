@@ -21,6 +21,6 @@ module.exports = {
     ecmaVersion: "latest",
   },
   rules: {
-
+"doublequotes" :"false"
   },
 };

@@ -3,8 +3,9 @@ const cookieParser = require('cookie-parser');
 const ssr = require('../middleware/ssr');
 const { verifyAccessToken } = require('../middleware/verifyTokens');
 const { checkUser } = require('../middleware/auth');
-
+const morgan = require('morgan')
 const config = (app) => {
+  app.use(morgan('dev'))
   app.use(express.json());
   app.use(express.urlencoded({ extended: true }));
   app.use(express.static('public'));

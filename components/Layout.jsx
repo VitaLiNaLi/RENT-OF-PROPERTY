@@ -11,6 +11,8 @@ module.exports = function Layout({ title, children}) {
         <script defer src="/scripts/productScript.js" />
         <script defer src="/scripts/orderScript.js" />
         <script defer src="/scripts/userScript.js" /> */}
+        <link rel="stylesheet" href="/css/1.css" />
+<script defer src="/js/userScript.js" />
 
       </head>
       {/* <Navbar user={user} /> */}
