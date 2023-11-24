@@ -22,6 +22,6 @@ const categoryViewRouter = require('./views/category.routes');
 router.use('/', categoryViewRouter);
 // router.use('/users', usersViewRouter);
 // router.use('/auth/api', authApiRouter);
-//router.use('/api/users', rejectIfNotAuthorized, usersApiRouter);
+// router.use('/api/users', rejectIfNotAuthorized, usersApiRouter);
 
 module.exports = router;

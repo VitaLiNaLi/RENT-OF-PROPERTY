@@ -9,13 +9,13 @@ legend {
 }
 
 .divFilter {
-  width: 15%;
+  width: 250px;
   display: flex;
   justify-content: center;
 }
 
-.placeList {
-  width: 85%;
+.placeListMain {
+  min-width: 1200px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
@@ -28,4 +28,29 @@ legend {
 
 .card {
   margin-bottom: 20px;
+}
+
+#enter {
+  margin: 15px auto;
+  background-color: white;
+  color: black;
+  border: 2px solid #04AA6D;
+  transition-duration: 0.4s;
+}
+
+#enter:hover {
+  background-color: #04AA6D;
+  color: white;
+}
+
+.btn-primary {
+  background-color: white !important;
+  color: black !important;
+  border: 2px solid red !important;
+  transition-duration: 0.4s !important;
+}
+
+.btn-primary:hover {
+  background-color: rgba(255, 0, 0, 0.621) !important;
+  color: white !important;
 }
