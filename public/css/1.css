@@ -9,13 +9,12 @@ legend {
 }
 
 .divFilter {
-  width: 15%;
+  width: 400px;
   display: flex;
   justify-content: center;
 }
 
-.placeList {
-  width: 85%;
+.placeListMain {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
@@ -28,4 +27,8 @@ legend {
 
 .card {
   margin-bottom: 20px;
+}
+
+#enter {
+  margin: 15px auto;
 }

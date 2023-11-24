@@ -11,7 +11,7 @@ function MainPage({ title, allCategories, allPlaces }) {
             <fieldset name="blockCats">
               <legend>Категории</legend>
               {allCategories.map((el) => (
-                <label>
+                <label key={el.id}>
                   {el.name}
                   <input
                     type="checkbox"
@@ -27,25 +27,35 @@ function MainPage({ title, allCategories, allPlaces }) {
             <fieldset name="blockFilts">
               <legend>Фильтры</legend>
               <label>
-                Выберите цену:
+                Выберите максимальную цену:
+                <br />
                 <input
                   id="rangeInput"
                   type="range"
                   step="1000"
                   min="0"
-                  max="1000000"
+                  max="150000"
                   name="priceRange"
+                  list="markers"
                 />
               </label>
+              <datalist id="markers">
+                <option value="25000" />
+                <option value="50000" />
+                <option value="75000" />
+                <option value="100000" />
+                <option value="125000" />
+              </datalist>
               <label>
                 Или введите её:
+                <br />
                 <input type="text" id="textInput" name="priceText" />
               </label>
             </fieldset>
-            <button type="submit">Применить фильтры</button>
+            <button id='enter' type="submit">Применить фильтры</button>
           </form>
         </div>
-        <div className="placeList">
+        <div className="placeListMain">
           {allPlaces.map((place) => (
             <Place place={place} key={place.id} />
           ))}
