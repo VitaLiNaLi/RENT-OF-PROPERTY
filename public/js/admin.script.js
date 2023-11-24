@@ -2,6 +2,8 @@
 const addBtn = document.querySelector(".addBtn");
 const addBtnSec = document.querySelector(".addBtnSec");
 const changeBtnSecond = document.querySelector(".changeBtnSecond");
+const mapBtn = document.querySelector(".mapBtn");
+console.log(mapBtn);
 
 // Forms
 const formUpdate = document.querySelector("#formUpdate");
@@ -28,7 +30,7 @@ if (modal) {
       const card = event.target.closest(".accordion");
       console.log(delBtn, "--------");
 
-      const res = await fetch(`/${delBtn.dataset.id}/delete`, {
+      const res = await fetch(`/admin/${delBtn.dataset.id}/delete`, {
         method: "DELETE",
       });
       const data = await res.json();
@@ -53,7 +55,7 @@ if (modal) {
       const old = document.querySelector("#offcanvasExample");
       old.remove();
 
-      const res = await fetch(`/offcanvas`, {
+      const res = await fetch(`/admin/offcanvas`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -82,7 +84,7 @@ if (formUpdate) {
 
     const { id, description, name, price } = event.target;
 
-    const response = await fetch("/update", {
+    const response = await fetch("/admin/update", {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -116,7 +118,7 @@ if (formUpdateS) {
 
     const { id, description, name, price } = event.target;
 
-    const response = await fetch("/update", {
+    const response = await fetch("/admin/update", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -150,7 +152,7 @@ if (formAddS) {
 
     const { description, name, price } = event.target;
 
-    const response = await fetch("/add", {
+    const response = await fetch("/admin/add", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -165,42 +167,45 @@ if (formAddS) {
     if (data.updated) {
       insertPoint.insertAdjacentHTML("afterend", data.html);
       console.log(data.message);
-      // // feedback.style.display = "block";
 
-      // return changeBtn.insertAdjacentHTML("beforeend", data.html);
+    }
+  });
+}
+
+// -------------------------------------------------------------------
+//add placemark to map
+
+// if (modal) {
+//   modal.addEventListener("click", async (event) => {
+//     console.log('88888888');
+//     if (event.target.classList.contains("mapBtn")) {
+// const coordinates=mapBtn.dataset.coor
+//       console.log(delBtn, "mapppp");
+//       ymaps.ready(init);
+// function init(coor) {
+//   var myMap = new ymaps.Map("map", {
+//     center: [59.929180, 30.288107],
+//     zoom: 7,
+//   });
+// }
+
+
+
+var placemark = new ymaps.Placemark(
+  coordinates.split(', '), {
+ 
+  }, {
+      'preset': 'islands#redDotIcon'
+  }
+);
+
+myMap.geoObjects.add(placemark);
+
+
+
     }
   });
 }
 
 
-// if (addBtnSec) {
-//   addBtn.addEventListener("click", async (event) => {
-//     console.log("1----------");
-//     const { description, name, price } = event.target;
 
-//     const res = await fetch('/add', {
-//       method: "POST",
-//       headers: { "Content-Type": "Application/json" },
-//       body: JSON.stringify({
-//         name: name.value,
-//         price: price.value,
-//         description: description.value,
-//       }),
-//     });
-//     const data = await res.json();
-//     console.log(data);
-//     return insertPoint.insertAdjacentHTML("afterend", data.html);
-//   });
-// }
-
-// const pictureData=[...url.files]
-// const dataFile=new FormData():
-// pictureData.forEach(img=>{
-//   dataFile.append('homesImg', img)
-// })
-// dataFile.append()
-
-// const res=await fetch('api/products',{
-//   method:'Post'
-//   body: dataFile
-// })

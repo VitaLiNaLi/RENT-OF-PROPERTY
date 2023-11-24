@@ -92,9 +92,10 @@ module.exports = function AdminString({ place }) {
                   {/* <!-- Кнопка-триггер модального окна --> */}
                   <button
                     type="button"
-                    className="btn btn-primary"
+                    className="mapBtn btn btn-primary"
                     data-bs-toggle="modal"
                     data-bs-target="#staticBackdrop"
+                    data-coor={place.coordinates}
                   >
                     Посмотреть расположение объекта
                   </button>
@@ -126,7 +127,7 @@ module.exports = function AdminString({ place }) {
                           ></button>
                         </div>
                         <div className="modal-body">
-                          <Map></Map>
+                        <Map/>
                         </div>
                         <div className="modal-footer">
                           <button

@@ -64,16 +64,17 @@ function init(coor) {
   });
 }
 
-var placemark = new ymaps.Placemark(
-  coordinates, {
-      'hintContent': address,
-      'balloonContent': 'Время работы: Пн-Пт, с 9 до 20'
-  }, {
-      'preset': 'islands#redDotIcon'
-  }
-);
 
-myMap.geoObjects.add(placemark);
+// var placemark = new ymaps.Placemark(
+//   coordinates, {
+//       'hintContent': address,
+//       'balloonContent': 'Время работы: Пн-Пт, с 9 до 20'
+//   }, {
+//       'preset': 'islands#redDotIcon'
+//   }
+// );
+
+// myMap.geoObjects.add(placemark);
 
 
 // map.controls.remove("geolocationControl"); // удаляем геолокацию
